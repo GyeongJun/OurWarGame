@@ -9,7 +9,7 @@
 
 	$(window).on('load', function() {
 		$(window).scrollTop(0);
-		hashChange("onLoad");
+		//hashChange("onLoad");
 	});
 	
 
@@ -33,16 +33,13 @@ function hashChange(caller) {
 	var tag = window.location.hash.substr(1, window.location.hash.length);
 	if( tag=="" && caller=="onLoad") {
 		//window.location.hash = "Notice"
-		window.location.reload();
+		//window.location.reload();
 		return ;
 	}
 
 	//$('#main').empty();
 	//$('#main').load(tag + ".html");	//web.xml�� ���� �ٸ� �̸����� ��������.
 	
-	
-
-
 }
 
 
