@@ -1,0 +1,32 @@
+﻿<!-- 이 HTML은 war_index.html에서 로드하는 foundation을 사용합니다.-->
+
+<dl>
+	<div class="medium-12 columns">
+		<dt>공지사항</dt>
+	</div>
+
+	<div id="content" class="small-12 columns">
+		
+	</div>
+</dl>
+
+
+
+<script>
+
+	$(function(){
+		$.getJSON('getNotice.jsp', function(data, status) {
+			if(data.length == 0) return 0;
+			$("div#content").empty();
+			for( idx in data ) {
+				var text 	= data[idx].text;
+				var time 	= data[idx].time;
+				$("div#content").append("<dd>" + text + "  " + time + "</dd>");
+			}
+		}).fail(function() {
+			var con = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>'
+			$('#content').append(con);
+		});	
+	});
+
+</script>

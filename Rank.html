@@ -1,0 +1,39 @@
+﻿<!-- 이 HTML은 war_index.html에서 로드하는 foundation을 사용합니다.-->
+
+
+<dl><div class="medium-12 columns" style="display:inline">
+	<dt>순위</dt>	
+</div>
+
+<div id="content" class="small-12 columns">
+    
+</div></dl>
+
+
+
+<script>
+
+	$(function(){
+			
+		// DUMMY CODE CREATOR
+		function newJson() {
+			return obj;
+			//return JSON.stringify(obj);
+		}
+	
+		$.getJSON('getProblem.jsp', function(data, status) {
+			if(data.length == 0) return ;
+			//$("div#content").empty();
+			
+			for( idx in data.system ) {
+				var text 	= data.system[idx].text;
+				var time 	= data.system[idx].time;
+				//$("div#content").append("<dd>" + text + "  " + time + "</dd>");
+			}
+		}).fail(function() {
+			var con = '<dd class="Gothic FontLarge"><b>사용자가 존재하지 않아</b><br>순위를 매길 수 없습니다.</dd>'
+			$('#content').append(con);
+		});	
+	});
+
+</script>

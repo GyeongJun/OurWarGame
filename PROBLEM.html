@@ -1,0 +1,203 @@
+﻿<!-- 이 HTML은 war_index.html에서 로드하는 foundation을 사용합니다.-->
+
+
+<dl><div class="medium-12 columns" style="display:inline">
+	<dt>문제</dt>
+	
+	<ul class="tabs" data-tab role="tablist">
+		<li id="tabSystem" class="tab-title system active" role="presentational">	
+			<a href="#System" role="tab" tabindex="0" aria-selected="true" controls="panel2-1">System</a></li>
+		<li id="tabReversing" class="tab-title reversing" role="presentational" >		
+			<a href="#Reversing" role="tab" tabindex="0"aria-selected="false" controls="panel2-2">Reversing</a></li>
+		<li id="tabWeb" class="tab-title web" role="presentational">		
+			<a href="#Web" role="tab" tabindex="0" aria-selected="false" controls="panel2-3">Web</a></li>
+		<li id="tabForensic" class="tab-title forensic" role="presentational" >		
+			<a href="#Forensic" role="tab" tabindex="0" aria-selected="false" controls="panel2-4">Forensic</a></li>
+		<li id="tabEtc" class="tab-title etc" role="presentational" >		
+			<a href="#ETC" role="tab" tabindex="0" aria-selected="false" controls="panel2-5">ETC</a></li>
+	</ul>
+	
+	<div class="tabs-content">
+		<section role="tabpanel" aria-hidden="false" class="content active" id="System">
+			<ul id="SystemGrid" class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">
+			</ul>
+		</section>
+		<section role="tabpanel" aria-hidden="true" class="content" id="Reversing">
+			<ul id="ReversingGrid" class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">
+			</ul>
+		</section>
+		<section role="tabpanel" aria-hidden="true" class="content" id="Web">
+			<ul id="WebGrid" class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">
+			</ul>
+		</section>
+		<section role="tabpanel" aria-hidden="true" class="content" id="Forensic">
+			<ul id="ForensicGrid" class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">
+			</ul>
+		</section>
+		<section role="tabpanel" aria-hidden="true" class="content" id="ETC">
+			<ul id="EtcGrid" class="small-block-grid-2 medium-block-grid-4 large-block-grid-8">
+			</ul>
+		</section>
+	</div>
+	
+	
+</div>
+
+<div id="content" class="small-12 columns">
+    
+</div></dl>
+
+
+
+<script>
+
+	$(function(){
+	
+		// TAB 토글 시 Callback, HASHTAG 변경을 방지.
+		$(document).foundation({
+			tab: {
+				callback : function (tab) {
+				
+					$('#main').removeClass('system reversing web forensic etc');
+					$('body').removeClass('system reversing web forensic etc background');
+					//$('body').addClass('_background');
+					switch( tab.attr('id') ) {
+						case 'tabSystem':
+							$('body').addClass('system background');
+							break;
+						case 'tabReversing':
+							$('body').addClass('reversing background');
+							break;							
+						case 'tabWeb':
+							$('body').addClass('web background');
+							break;
+						case 'tabForensic':
+							$('#main').addClass(' background');
+							break;
+						case 'tabEtc':
+							$('#main').addClass(' background');
+							break;
+						default:
+							$('#main').addClass('background');
+							break;
+					}
+					//alert(tab);
+				}
+			}
+		});
+		
+		
+		// DUMMY CODE CREATOR
+		function newJson() {
+			
+			var obj = new Object();
+			
+			var prob1 = new Object();
+			var prob2 = new Object();
+			var prob3 = new Object();
+			
+			prob1.num = 1;
+			prob1.con = "BOF1";
+			prob1.point = 100;
+			prob1.solved = "y";
+			
+			prob2.num = 2;
+			prob2.con = "BOF2";
+			prob2.point = 200;
+			prob2.solved = "n";
+			
+			prob3.num = 3;
+			prob3.con = "BOF3";
+			prob3.point = 100;
+			prob3.solved = "y";
+			
+			var system = new Array();
+			system.push(prob1);
+			system.push(prob2);
+			system.push(prob3);
+			
+			
+			prob1 = new Object();
+			prob2 = new Object();
+			prob3 = new Object();
+			
+			prob1.num = 4;
+			prob2.con = "REV1";
+			prob1.point = 300;
+			prob1.solved = "n";
+			
+			prob2.num = 5;
+			prob2.con = "REV2";
+			prob2.point = 200;
+			prob2.solved = "n";
+			
+			prob3.num = 6;
+			prob3.con = "REV3";
+			prob3.point = 100;
+			prob3.solved = "y";
+			
+			
+			var reversing = new Array();
+			reversing.push(prob1);
+			reversing.push(prob2);
+			reversing.push(prob3);
+			
+			
+			var web = new Array();
+			var etc = new Array();
+			var forensic = new Array();
+		
+			obj.system = system;
+			obj.reversing = reversing;
+			obj.web = web;
+			obj.forensic = forensic;
+			obj.etc = etc;
+			
+			return obj;
+			//return JSON.stringify(obj);
+		}
+	
+		$.getJSON('getProblem.jsp', function(data, status) {
+			if(data.length == 0) return ;
+			setProblemList(data);
+		}).fail(function() {
+			var con = '<dd class="Gothic FontLarge"><b>죄송합니다.</b><br>서버로의 요청이 실패하였습니다.</dd>'
+			$('#content').append(con);
+			
+			var data = newJson();
+			setProblemList(data);
+			
+			
+		});	
+	});
+	
+	function getProblemList() {
+		$.getJSON('getProblem.jsp', function(data, status) {
+			return data;
+		}).fail(function() {
+			return false;
+		});	
+	}
+	
+	function setProblemList(data) {
+	
+		for( idx in data.system ) {
+			console.log(data.system[idx].con);
+			
+			var content = "";
+			
+			if( data.system[idx].solved == "y")
+				content = '<li><a href="#" class="button success radius" num=';
+			else 
+				content = '<li><a href="#" class="button secondary radius" num=';
+			
+			content +=  data.system[idx].num + 
+			'>'+ data.system[idx].con + '<br/>' + data.system[idx].point + '</a></li>'
+			$("#SystemGrid").append(content);
+			
+			console.log(content);		
+		}
+	
+	}
+
+</script>
