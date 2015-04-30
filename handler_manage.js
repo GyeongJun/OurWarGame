@@ -3,8 +3,8 @@ $(function(){
 	$(document).ready(init);
 	$(window).on('hashchange', function() {
 		hashChange();
-		// on ¸Þ¼ÒµåÀÇ µÎ¹øÂ° ÀÎÀÚ·Î ÇÔ¼ö¸í Àü´Þ½Ã 
-		// onload¿Í µ¿ÀÏÇÏ°Ô µ¿ÀÛÇÏ¹Ç·Î ÀÏ´Ü ÀÌ·¸°Ô ÇØµÒ.
+		// on ï¿½Þ¼Òµï¿½ï¿½ï¿½ ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½Þ½ï¿½ 
+		// onloadï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¹Ç·ï¿½ ï¿½Ï´ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½Øµï¿½.
 	});
 
 	$(window).on('load', function() {
@@ -25,12 +25,6 @@ function init() {
 	$('#user').load("user_manage.html");
 	$('#hall').load("hall_manage.html");
 		
-		
-		
-		
-	}).fail(function() {
-		//alert("Failed getJSON func");
-	});
 
 }
 
@@ -44,7 +38,7 @@ function hashChange(caller) {
 	}
 
 	//$('#main').empty();
-	//$('#main').load(tag + ".html");	//web.xmlÀ» ÅëÇØ ´Ù¸¥ ÀÌ¸§À¸·Î ¸ÅÇÎÇÏÀÚ.
+	//$('#main').load(tag + ".html");	//web.xmlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	
 	
 
