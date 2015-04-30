@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="ko">
+	<head>
+		<meta charset="euc-kr" />
+		
+		
+		
+		<!-- viewport를 CSS에서 구현하라는데...-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Index | WarGame</title>
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Load foundation and jquery library -->
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/foundation.min.js"></script>
+
+		<!-- check html5 browser -->
+		<script src="js/vendor/modernizr.js"></script>
+
+		<!-- Load foundation css -->
+		<link rel="stylesheet" href="css/foundation.css" />
+
+		<!-- JS extension for Topbar -->
+		<script src="js/foundation/foundation.dropdown.js"></script>
+		<script src="js/foundation/foundation.topbar.js"></script>
+		<script src="js/foundation/foundation.alert.js"></script>
+		
+		
+		<!-- Define custom css and hook foundation css -->		
+		<link rel="stylesheet" href="common.css" />
+		<link rel="stylesheet" href="layout.css" />
+		
+		<!-- Load sweet alert -->
+		<script src="sweetalert-master/lib/sweet-alert.min.js"></script>
+		<link rel="stylesheet" href="sweetalert-master/lib/sweet-alert.css">
+		
+		<!-- Load event handler -->
+		<script src="handler.js"></script>
+		
+
+	</head>
+
+	<body>
+		<header class="fixed">
+		
+			<!-- TOPBAR -->
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name">
+						<h1><a href="index.html">K.KNOCK</a></h1>
+					</li>
+					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+					<!--li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li-->
+				</ul>
+
+				<section class="top-bar-section">
+				<!-- Left Nav Section -->
+					<ul class="left">
+						<li><a href="#Notice">Notice</a></li>
+						<li><a href="#PROBLEM">PROBLEM</a></li>
+						<li><a href="#Rank">Rank</a></li>
+
+					</ul>
+
+				<!-- Right Nav Section -->
+					<ul class="right">
+						<li class="pre-login"><a id="login" data-reveal-id="loginModal">로그인</a></li>
+						<li class="pre-login"><a id="join" data-reveal-id="joinModal">회원가입</a></li>
+					</ul>
+					
+					<ul class="right hide">
+						<li class="post-login has-dropdown hide">
+							<a href="#">MENU</a>
+							<ul class="dropdown">
+								<li><a href="#logout">로그아웃</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			
+			<ul class="breadcrumbs"></ul>
+
+		</header>
+
+		<main id="main" class="row Gothic">
+			<div id="loadIconBox" class="small-12 columns" align="center">
+				<img src="war/Preloader_7.gif" align="center"/>
+			</div>
+		</main>
+
+		
+		<footer class="panel Gothic">
+			<div class="large-3 columns" align="center">
+				<a href="http://kknock.org" target="_blank"><img src="war/kknock2.png" width="50%"/></a>
+			</div>
+			<div class="large-3 columns">
+				<section>
+					<h3>Contact:</h3>
+					<p>Mailing: <a href="mailTo:kknockcert@kyonggi.ac.kr">kknockcert@kyonggi.ac.kr</a>
+					<p>Phone: 031-249-9556
+				</section>
+			</div>
+			<div class="large-3 columns">
+				<section>
+					<h3>Address:</h3>
+					<p>경기도 수원시 영통구 광교산로 154-42
+					<br>예지관 4502호 침해사고대응팀
+				</section>
+			</div>
+			<div class="large-3 columns">
+				<section>
+					<h4>Version:</h4>
+					<p>2015-04-24 version 0.1
+
+					<p><h4>Programmed by:</h4>
+					<p>지혜선 이혜원 천경준
+				</section>
+			</div>
+		</footer>
+		
+		
+	</body>
+	
+	
+	
+	
+	<modal> <!-- Modal(popup) 정의 -->
+		<!-- 로그인 팝업 코드 -->
+		<div id="loginModal" class="reveal-modal small" data-reveal aria-labelledby="loginModalTitle" aria-hidden="true" role="dialog">
+			<h3 id="loginModalTitle">Log In to K.game.</h3>
+			<hr><p>
+			
+			<form id="formLogin" onsubmit="return false" data-abide>
+				<div class="name-field">
+					<label>식별명 <small>required</small>
+						<input name="id" type="text" required>
+					</label>
+					<small class="error">식별명을 입력해주세요</small>
+				</div>
+				<div class="password-field">
+					<label>식별번호 <small>required</small>
+						<input name="pw" type="password" required>
+					</label>
+					<small class="error">식별번호를 입력해주세요</small>
+				</div>
+				<div class="large-12 columns">
+					<div class="large-6 columns">
+						<button type="submit" class="secondary button" >인증</button>
+					</div>
+					<div class="large-6 columns">
+						<a href="#" data-reveal-id="joinModal" class="secondary button">아직도 가입을 안하셨나요?</a>
+					</div>
+				</div>
+			</form>
+			
+			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+		</div>
+		
+	
+		<!-- 회원가입 팝업 코드 -->
+		<div id="joinModal" class="reveal-modal small" data-reveal aria-labelledby="joinModalTitle" aria-hidden="true" role="dialog">
+			<h3 id="joinModalTitle">Join to K.game.</h3>
+			<hr><p>
+						
+			<form id="formJoin" onsubmit="return false" data-abide>
+				<div class="name-field">
+					<label>식별명 <small>required</small>
+						<input name="id" type="text" required>
+					</label>
+					<small class="error">식별명을 입력해주세요</small>
+				</div>
+				<div class="password-field">
+					<label>식별번호 <small>required</small>
+						<input name="pw" type="password" required>
+					</label>
+					<small class="error">식별번호를 입력해주세요</small>
+				</div>
+				<div class="password-field">
+					<label>식별번호 확인<small>required</small>
+						<input name="pw" type="password"  placeholder="식별번호가 확실한가요?" required>
+					</label>
+					<small class="error">식별번호를 다시 입력해주세요</small>
+				</div>
+				<div class="name-field">
+					<label>이름 <small>required</small>
+						<input name="name" type="text" required>
+					</label>
+					<small class="error">공개할 이름을 입력해주세요</small>
+				</div>
+				<div class="large-12 columns">
+					<div class="large-12 columns">
+						<button type="submit" class="button" >등록</button>
+					</div>
+				</div>
+			</form>			
+			
+			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+		</div>
+	
+	</modal>
+	
+	
+	<!-- Load foundation. 반드시 마지막에 위치해야한다. -->
+	<script>
+			$(document).foundation();
+	</script>
+	
+</html>

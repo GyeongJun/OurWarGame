@@ -1,0 +1,53 @@
+/*
+ *	태그들에 대한 클래스와 기본 CSS를 정의 / 재정의합니다. 
+ *
+*/
+
+
+// Define default tags style
+	
+	body {
+		min-height:100%;
+	}
+
+	main {
+		min-height:70%;
+	}
+	
+	aside {
+		background-color:rgba(0,0,0,0.7);
+		width:20%;
+	}
+
+	footer {
+		display: inline-block;
+		width: 100%;
+	}
+
+	b {
+		color: #0079C2;
+	}
+
+// foundation.css [tabs] hook
+	.tabs dd > a, .tabs .tab-title > a {
+		background-color: #EFEFEF;
+		color: #222222;
+	}
+	.tabs dd.active a, .tabs .tab-title.active.system a {
+		background-color: #FE6E4E;
+		color: #222222; 
+	}
+		
+
+// foundation.css [button] hook
+	button.secondary, .button.secondary {
+		background-color: #e7e7e7;
+		border-color: #b9b9b9;
+		color: #333333; 
+	}
+	button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
+		background-color: #b9b9b9; 
+	}
+	button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
+		color: #333333; 
+	}

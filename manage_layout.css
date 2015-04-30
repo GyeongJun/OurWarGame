@@ -1,0 +1,64 @@
+/*
+ *	태그들에 대한 클래스와 기본 CSS를 정의 / 재정의합니다. 
+ *
+*/
+
+
+// Define default tags style
+	
+	body {
+		min-height:100%;
+	}
+
+	main {
+		height:100%;
+	}
+	
+	b {
+		color: #0079C2;
+	}
+	
+	.tabs-content {
+		background-color:rgba(245, 245, 245, 1);
+		padding-left: 18%;
+	}
+
+	.tabs.vertical {
+		height:100%;
+		width:15%;
+		background-color:#EFEFEF;
+		background-color:#222222;
+	
+	}
+	.tabs.vertical > li  {
+		text-align: center;
+		font-size: 1rem;
+		margin: 0 auto;
+		display: block;
+		border-bottom:1px solid #333333;
+		
+	}
+	.tabs > a, .tabs .tab-title > a {
+		background-color:#222222;
+	}
+	
+	.tabs .tab-title.active > a {
+		background-color: rgba(0, 121, 194, 0.8);
+	}
+	
+	.tabs > a, .tabs .tab-title > a > label{
+		color:#DADADA;
+		font-family:"Nanum gothic", "맑은 고딕";
+	}
+	.tabs.vertical > li > * i, .tabs.vertical > li > a > img {
+		width: 15%;
+		display: block;
+		margin: 0 auto; 
+	}
+	.tabs.vertical > li > a > i + label, .tabs.vertical > li > a > img + label {
+		margin-top: .0625rem; 
+	}
+	
+	.tabs.vertical > li > a > img {
+		display:none;
+	}
