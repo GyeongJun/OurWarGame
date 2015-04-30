@@ -1,0 +1,75 @@
+/*
+ *	공통으로 사용하는 클래스에 대하여 정의합니다.
+ *	폰트, 색 등이 여기에 해당합니다.
+*/
+
+
+
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+.Gothic {
+	font-family: "Nanum Gothic" , "맑은 고딕", "돋움";
+}
+
+.FontLarge {
+	font-size: x-large;
+}
+
+.GREEN {
+	background-color: #78A22F;
+}
+
+.BLUE {
+	background-color: #0079C2;
+}
+
+.system {
+	//background-color: #FE6E4E;
+	background-color: rgba(254, 110, 78, 0.15);
+}
+
+.reversing {
+	//background-color: #C960DA;
+	background-color: rgba(201, 96, 218, 0.15);
+}
+
+.web {
+	//background-color: #4BBDEE;
+	background-color: rgba(75, 189, 238, 0.15);
+}
+
+.forensic {
+	//background-color: #4EFE6E;
+	background-color: rgba(254, 110, 78, 0.3);
+}
+
+.etc {
+	//background-color: #F6DD53;
+	background-color: rgba(254, 110, 78, 0.3);
+}
+
+.background {
+	//opacity: 1.0;
+}
+
+._background {
+	background-color:rgba(0,0,0,0.1)
+}
+
+.row {
+	opacity: 1.0;
+}
+
+.main-section {
+	background-color:rgba(0,0,0,0.7);
+	height: 100%;
+}
+
+.custom_alert {
+	position: absolute;
+	display: inline;
+	top: -60px;
+	right: -100px;
+	z-index: 99;
+}
