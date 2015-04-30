@@ -1,25 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
 <%
-	// ���� ���ϸ� ��Ż�ϴ°ɷ�
+	// ���� ���ϸ� ��Ż�ϴ°ɷ�
 %>
 
-<div class="small-12 columns">
+<dl>
+	<div class="small-12 columns">
+		<dt>공지사항</dt>
+	</div>
 
-	<ul>
-	
-		<li> </li>
-	
-	</ul>
-
-</div>
-
-<div class="small-12 columns">
-	
+	<div id="content" class="small-12 columns">
+		
+	</div>
+</dl>
 
 
-</div>
-	
+
 <script>
 
+	$(function(){
+		$.getJSON('getNotice.jsp', function(data, status) {
+			if(data.length == 0) return 0;
+			$("div#content").empty();
+			
+			var btnDelete = "<a href="#" class="button tiny">삭제</a>";
+			
+			for( idx in data ) {
+				var text 	= data[idx].text;
+				var time 	= data[idx].time;
+				$("div#content").append("<dd>" + text + "  " + time + " </dd>");
+			}
+		}).fail(function() {
+			var con = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>'
+			$('#content').append(con);
+		});	
+	});
 
 </script>

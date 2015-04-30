@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
 <%
-	// ÀÎÁõ ¸øÇÏ¸é ±¤Å»ÇÏ´Â°É·Î
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½Å»ï¿½Ï´Â°É·ï¿½
 %>
 
 <!doctype html>
@@ -10,7 +10,7 @@
 		
 		
 		
-		<!-- viewport¸¦ CSS¿¡¼­ ±¸ÇöÇÏ¶ó´Âµ¥...-->
+		<!-- viewportï¿½ï¿½ CSSï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½Âµï¿½...-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<title>Index | WarGame</title>
@@ -44,7 +44,7 @@
 		<link rel="stylesheet" href="sweetalert-master/lib/sweet-alert.css">
 		
 		<!-- Load event handler -->
-		<!--script src="handler.js"></script-->
+		<script src="handler_manage.js"></scrip>
 		
 
 	</head>
@@ -65,8 +65,8 @@
 				<section class="top-bar-section">
 				<!-- Right Nav Section -->
 					<ul class="right">
-						<li><a href="index.html">»ç¿ëÀÚ ÆäÀÌÁö</a></li>
-						<li><a id="logout">·Î±×¾Æ¿ô</a></li>
+						<li><a href="index.html">ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+						<li><a id="logout">ï¿½Î±×¾Æ¿ï¿½</a></li>
 					</ul>
 				</section>
 			</nav>
@@ -77,25 +77,25 @@
 			<li class="tab-title">
 				<a href="#notice" class="item">
 					<img src="img/icon/bell.png">
-					<label>°øÁö»çÇ×</label>
+					<label>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</label>
 				</a>
 			</li>
 			<li class="tab-title">
 				<a href="#prob" class="item">
 					<img src="img/icon/unknown.png">
-					<label>¹®Á¦</label>
+					<label>ï¿½ï¿½ï¿½ï¿½</label>
 				</a>
 			</li>
 			<li class="tab-title">
 				<a  href="#user" class="item">
 					<img src="img/icon/users.png">
-					<label>»ç¿ëÀÚ</label>
+					<label>ï¿½ï¿½ï¿½ï¿½ï¿½</label>
 				</a>
 			</li>
 			<li class="tab-title">
 				<a href="#hall" class="item">
 					<img src="img/icon/unknown.png">
-					<label>¸í¿¹ÀÇ Àü´ç</label>
+					<label>ï¿½?ï¿½ï¿½ ï¿½ï¿½ï¿½</label>
 				</a>
 			</li>
 			<li class="tab-title">
@@ -106,22 +106,22 @@
 			</li>
 		</ul>
 		
-		<!-- ÅÇ¿¡ ´ëÀÀÇÏ´Â ÄÚµåµé -->
+		<!-- ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Úµï¿½ï¿½ -->
 		<div class="tabs-content">
 			<div class="content active" id="default">
 				<div class="small-12 columns">
-					<h2 class="Gothic">°ü¸®ÀÚ ÆäÀÌÁö¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù.</h2><p/>
-					µ¿¾Æ¸®°¡ ¿¬»óµÇ´Â µÎ°¡Áö »öÀ» ÁÖ·Î »ç¿ëÇÏÀÚ.<br/>
-					Å¾¹Ù°¡ ³Ê¹« ¾ß¸®ÇÑµ¥ Á» Å°¿ï±î... <br/>
-					³»°¡ IE¸¦ Áö¿ø ¾ÈÇÏ´Â°Ô ¾Æ´Ï¾ß. IE°¡ ³¯ Áö¿ø ¾ÈÇÏ´Â°ÅÁö.<br/>
-					ÀÎÄÚµù ¹®Á¦·Î ANSI ÀÎÄÚµùÀÇ CSS ³»ºÎ ÇÑ±ÛÀÌ ±úÁ® ÆùÆ® µîÀÌ Àû¿ë ¾ÈµÇ´Â ¹®Á¦ ÀÖÀ½.<br/>
+					<h2 class="Gothic">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½ È¯ï¿½ï¿½ï¿½Õ´Ï´ï¿½.</h2><p/>
+					ï¿½ï¿½ï¿½Æ¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.<br/>
+					Å¾ï¿½Ù°ï¿½ ï¿½Ê¹ï¿½ ï¿½ß¸ï¿½ï¿½Ñµï¿½ ï¿½ï¿½ Å°ï¿½ï¿½ï¿½... <br/>
+					ï¿½ï¿½ï¿½ï¿½ IEï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´Â°ï¿½ ï¿½Æ´Ï¾ï¿½. IEï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´Â°ï¿½ï¿½ï¿½.<br/>
+					ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ANSI ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ CSS ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ÈµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.<br/>
 				</div>
 			</div>
 
 
 			<div class="content" id="notice">
 				a
-			</div>
+			<div>
 			
 			
 			<div class="content" id="prob">
@@ -146,7 +146,7 @@
 	
 	
 	
-	<!-- Load foundation. ¹Ýµå½Ã ¸¶Áö¸·¿¡ À§Ä¡ÇØ¾ßÇÑ´Ù. -->
+	<!-- Load foundation. ï¿½Ýµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ø¾ï¿½ï¿½Ñ´ï¿½. -->
 	<script>
 		//$(document).foundation();
 		$(document).foundation({
