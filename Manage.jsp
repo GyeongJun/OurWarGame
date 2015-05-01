@@ -9,8 +9,7 @@
 		<meta charset="utf-8" />
 		
 		
-		
-		<!-- viewport�� CSS���� �����϶�µ�...-->
+		<!-- viewport를 CSS에서 구현하라는데...-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<title>Index | WarGame</title>
@@ -65,8 +64,8 @@
 				<section class="top-bar-section">
 				<!-- Right Nav Section -->
 					<ul class="right">
-						<li><a href="index.html">����� ������</a></li>
-						<li><a id="logout">�α׾ƿ�</a></li>
+						<li><a href="index.html">사용자 페이지</a></li>
+						<li><a id="logout">로그아웃</a></li>
 					</ul>
 				</section>
 			</nav>
@@ -77,25 +76,25 @@
 			<li class="tab-title">
 				<a href="#notice" class="item">
 					<img src="img/icon/bell.png">
-					<label>��������</label>
+					<label>공지사항</label>
 				</a>
 			</li>
 			<li class="tab-title">
 				<a href="#prob" class="item">
 					<img src="img/icon/unknown.png">
-					<label>����</label>
+					<label>문제</label>
 				</a>
 			</li>
 			<li class="tab-title">
 				<a  href="#user" class="item">
 					<img src="img/icon/users.png">
-					<label>�����</label>
+					<label>사용자</label>
 				</a>
 			</li>
 			<li class="tab-title">
 				<a href="#hall" class="item">
 					<img src="img/icon/unknown.png">
-					<label>�?�� ���</label>
+					<label>명예의 전당</label>
 				</a>
 			</li>
 			<li class="tab-title">
@@ -106,15 +105,15 @@
 			</li>
 		</ul>
 		
-		<!-- �ǿ� �����ϴ� �ڵ�� -->
+		<!-- 탭에 대응하는 코드들 -->
 		<div class="tabs-content">
 			<div class="content active" id="default">
 				<div class="small-12 columns">
-					<h2 class="Gothic">���� �������� ���Ű��� ȯ���մϴ�.</h2><p/>
-					���Ƹ��� ����Ǵ� �ΰ��� ���� �ַ� �������.<br/>
-					ž�ٰ� �ʹ� �߸��ѵ� �� Ű���... <br/>
-					���� IE�� ���� ���ϴ°� �ƴϾ�. IE�� �� ���� ���ϴ°���.<br/>
-					���ڵ� ������ ANSI ���ڵ��� CSS ���� �ѱ��� ���� ��Ʈ ���� ��� �ȵǴ� ���� ����.<br/>
+					<h2 class="Gothic">관리자 페이지에 오신것을 환영합니다.</h2><p/>
+					동아리가 연상되는 두가지 색을 주로 사용하자.<br/>
+					탑바가 너무 야리한데 좀 키울까... <br/>
+					내가 IE를 지원 안하는게 아니야. IE가 날 지원 안하는거지.<br/>
+					인코딩 문제로 ANSI 인코딩의 CSS 내부 한글이 깨져 폰트 등이 적용 안되는 문제 있음.<br/>
 				</div>
 			</div>
 
@@ -146,7 +145,7 @@
 	
 	
 	
-	<!-- Load foundation. �ݵ�� �������� ��ġ�ؾ��Ѵ�. -->
+	<!-- Load foundation. 반드시 마지막에 위치해야한다. -->
 	<script>
 		//$(document).foundation();
 		$(document).foundation({
