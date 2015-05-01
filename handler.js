@@ -1,16 +1,16 @@
-ï»¿$(function(){
+$(function(){
 
 	$(document).ready(init);
 	$(window).on('hashchange', function() {
 		hashChange();
-		// on ë©”ì†Œë“œì˜ ë‘ë²ˆì§¸ ì¸ìë¡œ í•¨ìˆ˜ëª… ì „ë‹¬ì‹œ 
-		// onloadì™€ ë™ì¼í•˜ê²Œ ë™ì‘í•˜ë¯€ë¡œ ì¼ë‹¨ ì´ë ‡ê²Œ í•´ë‘ .
+		// on ¸Ş¼ÒµåÀÇ µÎ¹øÂ° ÀÎÀÚ·Î ÇÔ¼ö¸í Àü´Ş½Ã 
+		// onload¿Í µ¿ÀÏÇÏ°Ô µ¿ÀÛÇÏ¹Ç·Î ÀÏ´Ü ÀÌ·¸°Ô ÇØµÒ.
 	});
 
 	$(window).on('load', function() {
 		$(window).scrollTop(0);
 		
-		// ì´ë²¤íŠ¸ ë“±ë¡
+		// ÀÌº¥Æ® µî·Ï
 		$('#formLogin').on('valid.fndtn.abide', login);
 		$('#formJoin').on('valid.fndtn.abide', join);
 		
@@ -30,7 +30,7 @@ function init() {
 			var name 	= data[idx].name;
 			$("nav.top-bar .right .dropdown").append("<li><a href=" + link + ">" + name + "</a></li>");
 		}
-		$("nav.top-bar .right .dropdown").append("<li><a href=#logout>ë¡œê·¸ì•„ì›ƒ</a></li>");
+		$("nav.top-bar .right .dropdown").append("<li><a href=#logout>·Î±×¾Æ¿ô</a></li>");
 		$('.pre-login').addClass('hide'); 		// hide
 		$('.post-login').removeClass('hide'); 	// show
 		
@@ -50,36 +50,36 @@ function hashChange(caller) {
 	}
 
 	$('#main').empty();
-	$('#main').load(tag + ".html");	//web.xmlì„ í†µí•´ ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ë§¤í•‘í•˜ì.
+	$('#main').load(tag + ".html");	//web.xmlÀ» ÅëÇØ ´Ù¸¥ ÀÌ¸§À¸·Î ¸ÅÇÎÇÏÀÚ.
 	
 }
 
 
 
 /* 
- * í´ë¼ì´ì–¸íŠ¸ì˜ ìš”ì²­ì— ë”°ë¼ ì„œë²„ì— ë¡œê·¸ì¸ì„ ìš”ì²­í•©ë‹ˆë‹¤.
- * login í•¨ìˆ˜ëŠ” ë¡œê·¸ì¸ ë²„íŠ¼ì´ ëˆŒë ¸ì„ ë•Œ ë™ì‘í•˜ë©° loginModalì— ì¢…ì†ì ì´ë‹¤.
- * ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ê°€ì ¸ì™€ ê°’ ì²´í¬ë¥¼ í•œë‹¤.
- * ì„œë²„ì— ë¡œê·¸ì¸ ì¿¼ë¦¬ë¥¼ ë˜ì§„ë‹¤.
+ * Å¬¶óÀÌ¾ğÆ®ÀÇ ¿äÃ»¿¡ µû¶ó ¼­¹ö¿¡ ·Î±×ÀÎÀ» ¿äÃ»ÇÕ´Ï´Ù.
+ * login ÇÔ¼ö´Â ·Î±×ÀÎ ¹öÆ°ÀÌ ´­·ÈÀ» ¶§ µ¿ÀÛÇÏ¸ç loginModal¿¡ Á¾¼ÓÀûÀÌ´Ù.
+ * ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ °¡Á®¿Í °ª Ã¼Å©¸¦ ÇÑ´Ù.
+ * ¼­¹ö¿¡ ·Î±×ÀÎ Äõ¸®¸¦ ´øÁø´Ù.
 */
 function login() {
 	
 	var _id = $('formLogin input:text[name="id"]').val();
 	var _pw = $('formLogin input:password[name="pw"]').val();
 
-	// ì„œë²„ì— ë¡œê·¸ì¸ ìš”ì²­
+	// ¼­¹ö¿¡ ·Î±×ÀÎ ¿äÃ»
 	var requestData = {id:_id, pw:_pw};
 	$.getJSON('login.jsp', requestData, function(data, status) {
 		if( data == true ) {
 			window.location.reload();
 			return true;
 		} else {
-			swal("ë¡œê·¸ì¸ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.", "ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.", "error");
+			swal("·Î±×ÀÎ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.", "¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.", "error");
 			return false;
 		}
 		
 	}).fail(function() {
-		swal("ì£„ì†¡í•©ë‹ˆë‹¤.", "ì„œë²„ë¡œì˜ ì—°ê²°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.", "error");
+		swal("ÁË¼ÛÇÕ´Ï´Ù.", "¼­¹ö·ÎÀÇ ¿¬°á¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.", "error");
 		return false;
 	});
 	
@@ -89,10 +89,10 @@ function login() {
 
 
 /* 
- * í´ë¼ì´ì–¸íŠ¸ì˜ ìš”ì²­ì— ë”°ë¼ ì„œë²„ì— íšŒì›ê°€ì…ì„ ìš”ì²­í•©ë‹ˆë‹¤.
- * join í•¨ìˆ˜ëŠ” ë¡œê·¸ì¸ ë²„íŠ¼ì´ ëˆŒë ¸ì„ ë•Œ ë™ì‘í•˜ë©° joinModalì— ì¢…ì†ì ì´ë‹¤.
- * ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ë“¤ì„ ê°€ì ¸ì™€ ì²´í¬ë¥¼ í•œë‹¤.
- * ì„œë²„ì— ê°€ì… ì¿¼ë¦¬ë¥¼ ë˜ì§„ë‹¤.
+ * Å¬¶óÀÌ¾ğÆ®ÀÇ ¿äÃ»¿¡ µû¶ó ¼­¹ö¿¡ È¸¿ø°¡ÀÔÀ» ¿äÃ»ÇÕ´Ï´Ù.
+ * join ÇÔ¼ö´Â ·Î±×ÀÎ ¹öÆ°ÀÌ ´­·ÈÀ» ¶§ µ¿ÀÛÇÏ¸ç joinModal¿¡ Á¾¼ÓÀûÀÌ´Ù.
+ * »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªµéÀ» °¡Á®¿Í Ã¼Å©¸¦ ÇÑ´Ù.
+ * ¼­¹ö¿¡ °¡ÀÔ Äõ¸®¸¦ ´øÁø´Ù.
 */
 function join () {
 	
@@ -101,18 +101,18 @@ function join () {
 	var _pw = $('#formJoin input:password[name="pw"]').val();
 	var _name = $('#formJoin input:text[name="name"]').val();
 	
-	// ì„œë²„ì— ê°€ì… ìš”ì²­
+	// ¼­¹ö¿¡ °¡ÀÔ ¿äÃ»
 	var requestData = {id:_id, pw:_pw, name:_name};
 	$.getJSON('join.jsp', requestData, function(data, status) {
 		if( data == true ) {
 			window.location.reload();
 			return true;
 		} else {
-			swal("ê°€ì…ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.", "?ê¹Œ?", "error");
+			swal("°¡ÀÔ¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.", "?±î?", "error");
 		}
 		
 	}).fail(function() {
-		swal("ì£„ì†¡í•©ë‹ˆë‹¤.", "ì„œë²„ë¡œì˜ ì—°ê²°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.", "error");
+		swal("ÁË¼ÛÇÕ´Ï´Ù.", "¼­¹ö·ÎÀÇ ¿¬°á¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.", "error");
 		return false;
 	});
 	

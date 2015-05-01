@@ -1,11 +1,11 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="ko">
 	<head>
 		<meta charset="euc-kr" />
 		
 		
 		
-		<!-- viewport를 CSS에서 구현하라는데...-->
+		<!-- viewport�� CSS���� �����϶�µ�...-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<title>Index | WarGame</title>
@@ -68,15 +68,15 @@
 
 				<!-- Right Nav Section -->
 					<ul class="right">
-						<li class="pre-login"><a id="login" data-reveal-id="loginModal">로그인</a></li>
-						<li class="pre-login"><a id="join" data-reveal-id="joinModal">회원가입</a></li>
+						<li class="pre-login"><a id="login" data-reveal-id="loginModal">�α���</a></li>
+						<li class="pre-login"><a id="join" data-reveal-id="joinModal">ȸ������</a></li>
 					</ul>
 					
 					<ul class="right hide">
 						<li class="post-login has-dropdown hide">
 							<a href="#">MENU</a>
 							<ul class="dropdown">
-								<li><a href="#logout">로그아웃</a></li>
+								<li><a href="#logout">�α׾ƿ�</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -108,8 +108,8 @@
 			<div class="large-3 columns">
 				<section>
 					<h3>Address:</h3>
-					<p>경기도 수원시 영통구 광교산로 154-42
-					<br>예지관 4502호 침해사고대응팀
+					<p>��⵵ ������ ���뱸 ������� 154-42
+					<br>������ 4502ȣ ħ�ػ��������
 				</section>
 			</div>
 			<div class="large-3 columns">
@@ -118,7 +118,7 @@
 					<p>2015-04-24 version 0.1
 
 					<p><h4>Programmed by:</h4>
-					<p>지혜선 이혜원 천경준
+					<p>������ ������ õ����
 				</section>
 			</div>
 		</footer>
@@ -129,31 +129,31 @@
 	
 	
 	
-	<modal> <!-- Modal(popup) 정의 -->
-		<!-- 로그인 팝업 코드 -->
+	<modal> <!-- Modal(popup) ���� -->
+		<!-- �α��� �˾� �ڵ� -->
 		<div id="loginModal" class="reveal-modal small" data-reveal aria-labelledby="loginModalTitle" aria-hidden="true" role="dialog">
-			<h3 id="loginModalTitle">Log In to 전설은 아니고 레전드.</h3>
+			<h3 id="loginModalTitle">Log In to K.game.</h3>
 			<hr><p>
 			
 			<form id="formLogin" onsubmit="return false" data-abide>
 				<div class="name-field">
-					<label>식별명 <small>required</small>
+					<label>�ĺ��� <small>required</small>
 						<input name="id" type="text" required>
 					</label>
-					<small class="error">식별명을 입력해주세요</small>
+					<small class="error">�ĺ����� �Է����ּ���</small>
 				</div>
 				<div class="password-field">
-					<label>식별번호 <small>required</small>
+					<label>�ĺ���ȣ <small>required</small>
 						<input name="pw" type="password" required>
 					</label>
-					<small class="error">식별번호를 입력해주세요</small>
+					<small class="error">�ĺ���ȣ�� �Է����ּ���</small>
 				</div>
 				<div class="large-12 columns">
 					<div class="large-6 columns">
-						<button type="submit" class="secondary button" >인증</button>
+						<button type="submit" class="secondary button" >����</button>
 					</div>
 					<div class="large-6 columns">
-						<a href="#" data-reveal-id="joinModal" class="secondary button">아직도 가입을 안하셨나요?</a>
+						<a href="#" data-reveal-id="joinModal" class="secondary button">������ ������ ���ϼ̳���?</a>
 					</div>
 				</div>
 			</form>
@@ -162,39 +162,39 @@
 		</div>
 		
 	
-		<!-- 회원가입 팝업 코드 -->
+		<!-- ȸ������ �˾� �ڵ� -->
 		<div id="joinModal" class="reveal-modal small" data-reveal aria-labelledby="joinModalTitle" aria-hidden="true" role="dialog">
-			<h3 id="joinModalTitle">Join to 전설은 아니고 레전드.</h3>
+			<h3 id="joinModalTitle">Join to K.game.</h3>
 			<hr><p>
 						
 			<form id="formJoin" onsubmit="return false" data-abide>
 				<div class="name-field">
-					<label>식별명 <small>required</small>
+					<label>�ĺ��� <small>required</small>
 						<input name="id" type="text" required>
 					</label>
-					<small class="error">식별명을 입력해주세요</small>
+					<small class="error">�ĺ����� �Է����ּ���</small>
 				</div>
 				<div class="password-field">
-					<label>식별번호 <small>required</small>
+					<label>�ĺ���ȣ <small>required</small>
 						<input name="pw" type="password" required>
 					</label>
-					<small class="error">식별번호를 입력해주세요</small>
+					<small class="error">�ĺ���ȣ�� �Է����ּ���</small>
 				</div>
 				<div class="password-field">
-					<label>식별번호 확인<small>required</small>
-						<input name="pw" type="password"  placeholder="식별번호가 확실한가요?" required>
+					<label>�ĺ���ȣ Ȯ��<small>required</small>
+						<input name="pw" type="password"  placeholder="�ĺ���ȣ�� Ȯ���Ѱ���?" required>
 					</label>
-					<small class="error">식별번호를 다시 입력해주세요</small>
+					<small class="error">�ĺ���ȣ�� �ٽ� �Է����ּ���</small>
 				</div>
 				<div class="name-field">
-					<label>이름 <small>required</small>
+					<label>�̸� <small>required</small>
 						<input name="name" type="text" required>
 					</label>
-					<small class="error">공개할 이름을 입력해주세요</small>
+					<small class="error">������ �̸��� �Է����ּ���</small>
 				</div>
 				<div class="large-12 columns">
 					<div class="large-12 columns">
-						<button type="submit" class="button" >등록</button>
+						<button type="submit" class="button" >���</button>
 					</div>
 				</div>
 			</form>			
@@ -205,7 +205,7 @@
 	</modal>
 	
 	
-	<!-- Load foundation. 반드시 마지막에 위치해야한다. -->
+	<!-- Load foundation. �ݵ�� �������� ��ġ�ؾ��Ѵ�. -->
 	<script>
 			$(document).foundation();
 	</script>

@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
 <%
 	// ���� ���ϸ� ��Ż�ϴ°ɷ�
 %>
