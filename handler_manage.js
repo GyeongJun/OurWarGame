@@ -1,4 +1,4 @@
-﻿$(function(){
+$(function(){
 
 	$(document).ready(init);
 	$(window).on('hashchange', function() {
@@ -9,7 +9,7 @@
 
 	$(window).on('load', function() {
 		$(window).scrollTop(0);
-		//hashChange("onLoad");
+		hashChange("onLoad");
 	});
 	
 
@@ -24,7 +24,6 @@ function init() {
 	$('#prob').load("prob_manage.html");
 	$('#user').load("user_manage.html");
 	$('#hall').load("hall_manage.html");
-		
 
 }
 
@@ -38,8 +37,9 @@ function hashChange(caller) {
 	}
 
 	//$('#main').empty();
-	//$('#main').load(tag + ".html");	//web.xml�� ���� �ٸ� �̸����� ��������.
-	
+	//$('#main').load(tag + ".html");	//web.xml을 통해 다른 이름으로 매핑하자.
+
+
 }
 
 

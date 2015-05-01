@@ -42,8 +42,8 @@
 		<script src="sweetalert-master/lib/sweet-alert.min.js"></script>
 		<link rel="stylesheet" href="sweetalert-master/lib/sweet-alert.css">
 		
-		<!-- Load event handler -->
-		<script src="handler_manage.js"></scrip>
+	<!-- Load event handler -->
+		<script src="handler_manage.js"></script>
 		
 
 	</head>
