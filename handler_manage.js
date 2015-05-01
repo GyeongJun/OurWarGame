@@ -1,10 +1,10 @@
-$(function(){
+﻿$(function(){
 
 	$(document).ready(init);
 	$(window).on('hashchange', function() {
 		hashChange();
-		// on �޼ҵ��� �ι�° ���ڷ� �Լ��� ��޽� 
-		// onload�� �����ϰ� �����ϹǷ� �ϴ� �̷��� �ص�.
+		// on 메소드의 두번째 인자로 함수명 전달시 
+		// onload와 동일하게 동작하므로 일단 이렇게 해둠.
 	});
 
 	$(window).on('load', function() {
@@ -38,7 +38,7 @@ function hashChange(caller) {
 	}
 
 	//$('#main').empty();
-	//$('#main').load(tag + ".html");	//web.xml�� ���� �ٸ� �̸����� ��������.
+	//$('#main').load(tag + ".html");	//web.xml을 통해 다른 이름으로 매핑하자.
 	
 	
 
