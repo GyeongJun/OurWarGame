@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+﻿<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
 <%
-	// ���� ���ϸ� ��Ż�ϴ°ɷ�
+	// 인증 못하면 광탈하는걸로
 %>
 
 <!doctype html>
 <html class="no-js" lang="ko">
 	<head>
-		<meta charset="euc-kr" />
+		<meta charset="utf-8" />
 		
 		
 		
