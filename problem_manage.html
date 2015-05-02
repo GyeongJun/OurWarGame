@@ -9,11 +9,13 @@
 			<form>
 				<div class="row">
 					<div class="large-12 columns">
-				    	<label>Register new notice
-				        	<input type="text"/> 
-				        	<button type="submit" class="button tiny right">등록</button>
+				    	<label>Register new problem
+				        	<input name="title" type="text" placeholder="문제명"/> 
+							<input name="point" type="text" placeholder="점수"/>
 				   		</label>
 					</div>
+					
+					<button type="submit" class="button tiny right">등록</button>
 				</div>
 			</form>
 		
@@ -24,7 +26,9 @@
 
 <script>	
 
-	$(function(){		
+	getProblemList();
+
+	$(function(){
 		$.getJSON('getNotice.jsp', function(data, status) {
 			if(data.length == 0) return 0;
 			$("div#content").empty();

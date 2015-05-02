@@ -43,6 +43,31 @@ function hashChange(caller) {
 }
 
 
-function loadNotice(box) {
+function getProblemList() {
+	$.getJSON('getProblem.jsp', function(data, status) {
+		return data;
+	}).fail(function() {
+		return false;
+	});	
+}
 	
+function setProblemList(data) {
+
+	for( idx in data.system ) {
+		console.log(data.system[idx].con);
+		
+		var content = "";
+		
+		if( data.system[idx].solved == "y")
+			content = '<li><a href="#" class="button success radius" num=';
+		else 
+			content = '<li><a href="#" class="button secondary radius" num=';
+		
+		content +=  data.system[idx].num + 
+		'>'+ data.system[idx].con + '<br/>' + data.system[idx].point + '</a></li>'
+		$("#SystemGrid").append(content);
+		
+		console.log(content);		
+	}
+
 }

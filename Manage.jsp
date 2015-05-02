@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+﻿<%@ page language="java" contentType="text/html; charsetutf-8r" pageEncoding=utf-8r"%>
 <%
 	// 인증 못하면 광탈하는걸로
 %>
