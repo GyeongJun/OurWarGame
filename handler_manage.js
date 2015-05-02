@@ -21,7 +21,7 @@ function init() {
 
 //  Initialize management menu
 	$('#notice').load("notice_manage.html");
-	$('#prob').load("prob_manage.html");
+	$('#prob').load("problem_manage.html");
 	$('#user').load("user_manage.html");
 	$('#hall').load("hall_manage.html");
 
@@ -38,7 +38,6 @@ function hashChange(caller) {
 
 	//$('#main').empty();
 	//$('#main').load(tag + ".html");	//web.xml을 통해 다른 이름으로 매핑하자.
-
 
 }
 
