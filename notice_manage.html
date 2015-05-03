@@ -1,7 +1,7 @@
 <div class="midium-12 colums">
-	<div id="content" class="small-6 columns panel">
+	<div class="small-6 columns panel">
 		<dl>
-			<div id="content" class="small-12 columns"></div>
+			<div id="nContent" class="small-12 columns"></div>
 		</dl>
 	</div>
 	<div class="small-6 columns">
@@ -27,7 +27,7 @@
 	$(function(){		
 		$.getJSON('getNotice.jsp', function(data, status) {
 			if(data.length == 0) return 0;
-			$("div#content").empty();
+			$("div#nContent").empty();
 			
 			var btnDelete = '<button type="submit" class="button tiny">삭제</button>';
 			
@@ -35,11 +35,11 @@
 				var text 	= data[idx].text;
 				var time 	= data[idx].time;
 				var ind 	= data[idx].ind;
-				$("div#content").append("<dd>" + text + "  " + time + " </dd>");
+				$("div#nContent").append("<dd>" + text + "  " + time + " </dd>");
 			}
 		}).fail(function() {
-			var content = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>'
-			$('#content').append(content);
+			var content = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>';
+			$('#nContent').append(content);
 		});	
 	});
 

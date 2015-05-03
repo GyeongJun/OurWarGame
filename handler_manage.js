@@ -12,18 +12,16 @@ $(function(){
 		hashChange("onLoad");
 	});
 	
-
-
 	
 })
 
 function init() {
 
 //  Initialize management menu
-	$('#notice').load("notice_manage.html");
-	$('#prob').load("problem_manage.html");
-	$('#user').load("user_manage.html");
-	$('#hall').load("hall_manage.html");
+	$('#notice').empty().load("notice_manage.html");
+	$('#prob').empty().load("problem_manage.html");
+	$('#user').empty().load("user_manage.html");
+	$('#hall').empty().load("hall_manage.html");
 
 }
 

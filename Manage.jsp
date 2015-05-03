@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charsetutf-8r" pageEncoding=utf-8r"%>
+<%@ page language="java" contentType="text/html; charsetutf-8r" pageEncoding=utf-8r"%>
 <%
 	// 인증 못하면 광탈하는걸로
 %>
@@ -52,23 +52,23 @@
 	
 	<main class="fixed">
 		
-		<!-- TOPBAR -->
-			<nav class="top-bar" data-topbar role="navigation">
-				<ul class="title-area">
-					<li class="name">
-						<h1><a>K.KNOCK</a></h1>
-					</li>
+		<!-- TOPBAR -->		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a>K.KNOCK</a></h1>
+				</li>
 
+			</ul>
+
+			<section class="top-bar-section">
+			<!-- Right Nav Section -->
+				<ul class="right">
+					<li><a href="index.html">사용자 페이지</a></li>
+					<li><a id="logout">로그아웃</a></li>
 				</ul>
+			</section>
+		</nav>
 
-				<section class="top-bar-section">
-				<!-- Right Nav Section -->
-					<ul class="right">
-						<li><a href="index.html">사용자 페이지</a></li>
-						<li><a id="logout">로그아웃</a></li>
-					</ul>
-				</section>
-			</nav>
 		
 	
 		
@@ -113,14 +113,13 @@
 					동아리가 연상되는 두가지 색을 주로 사용하자.<br/>
 					탑바가 너무 야리한데 좀 키울까... <br/>
 					내가 IE를 지원 안하는게 아니야. IE가 날 지원 안하는거지.<br/>
-					인코딩 문제로 ANSI 인코딩의 CSS 내부 한글이 깨져 폰트 등이 적용 안되는 문제 있음.<br/>
 				</div>
 			</div>
 
 
 			<div class="content" id="notice">
 				a
-			<div>
+			</div>
 			
 			
 			<div class="content" id="prob">
