@@ -1,0 +1,65 @@
+<div class="midium-12 colums">
+	<div class="small-6 columns panel">
+		<dl>
+			<div id="pContent" class="small-12 columns">
+			</div>
+		</dl>
+	</div>
+	<div class="small-6 columns">
+		<div class="panel">
+			<form>
+				<div class="row">
+					<label>Register new problem</label>
+					<div class="large-12 columns">
+				        	<input name="title" type="text" placeholder="문제명"/> 
+				    </div>    	
+					<div class="large-12 columns">
+							<input name="point" type="number" placeholder="점수"/>
+					</div>
+			   		<div class="large-12 columns">
+						<select>
+							<option value="system">시스템</option>
+							<option value="reversing">리버스엔지니어링</option>
+							<option value="web">웹</option>
+							<option value="forensic">포렌식</option>
+							<option value="etc">기타</option>
+						</select>
+					</div>
+					<div class="large-12 columns">
+						<textarea name="content" placeholder="내용" rows="30"></textarea>
+					</div>
+
+					
+					<button type="submit" class="button tiny right">등록</button>
+				</div>
+			</form>
+		
+		</div>
+	</div>
+</div>
+
+
+<script>	
+
+	//getProblemList();
+
+	$(function(){
+		$.getJSON('getNotice.jsp', function(data, status) {
+			if(data.length == 0) return 0;
+			$("div#pContent").empty();
+			
+			var btnDelete = '<button type="submit" class="button tiny">삭제</button>';
+			
+			for( idx in	data ) {
+				var text 	= data[idx].text;
+				var time 	= data[idx].time;
+				var ind 	= data[idx].ind;
+				$("div#pContent").append("<dd>" + text + "  " + time + " </dd>");
+			}
+		}).fail(function() {
+			var content = '<dd class="Gothic FontLarge"><b>문제</b>가 없습니다.</dd>';
+			$('#pContent').append(content);
+		});	
+	});
+
+</script>
