@@ -1,4 +1,4 @@
-﻿<!-- 이 HTML은 war_index.html에서 로드하는 foundation을 사용합니다.-->
+<!-- 이 HTML은 war_index.html에서 로드하는 foundation을 사용합니다.-->
 
 
 <dl><div class="medium-12 columns" style="display:inline">
@@ -96,17 +96,17 @@
 			var prob2 = new Object();
 			var prob3 = new Object();
 			
-			prob1.num = 1;
+			prob1nom = 1;
 			prob1.con = "BOF1";
 			prob1.point = 100;
 			prob1.solved = "y";
 			
-			prob2.num = 2;
+			prob2nom = 2;
 			prob2.con = "BOF2";
 			prob2.point = 200;
 			prob2.solved = "n";
 			
-			prob3.num = 3;
+			prob3nom = 3;
 			prob3.con = "BOF3";
 			prob3.point = 100;
 			prob3.solved = "y";
@@ -121,17 +121,17 @@
 			prob2 = new Object();
 			prob3 = new Object();
 			
-			prob1.num = 4;
+			prob1nom = 4;
 			prob2.con = "REV1";
 			prob1.point = 300;
 			prob1.solved = "n";
 			
-			prob2.num = 5;
+			prob2nom = 5;
 			prob2.con = "REV2";
 			prob2.point = 200;
 			prob2.solved = "n";
 			
-			prob3.num = 6;
+			prob3nom = 6;
 			prob3.con = "REV3";
 			prob3.point = 100;
 			prob3.solved = "y";
@@ -161,7 +161,7 @@
 			if(data.length == 0) return ;
 			setProblemList(data);
 		}).fail(function() {
-			var con = '<dd class="Gothic FontLarge"><b>죄송합니다.</b><br>서버로의 요청이 실패하였습니다.</dd>'
+			var con = '<dd class="Gothic FontLarge"><b>죄송합니다.</b><br>서버로의 요청이 실패하였습니다.</dd>';
 			$('#content').append(con);
 			
 			var data = newJson();
@@ -187,12 +187,12 @@
 			var content = "";
 			
 			if( data.system[idx].solved == "y")
-				content = '<li><a href="#" class="button success radius" num=';
+				content = '<li><a class="button problem success radius"no=';
 			else 
-				content = '<li><a href="#" class="button secondary radius" num=';
+				content = '<li><a class="button problem secondary radius"no=';
 			
-			content +=  data.system[idx].num + 
-			'>'+ data.system[idx].con + '<br/>' + data.system[idx].point + '</a></li>'
+			content +=  data.system[idx].no + 
+				'>'+ data.system[idx].con + '<br/>' + data.system[idx].point + '</a></li>';
 			$("#SystemGrid").append(content);
 			
 			console.log(content);		

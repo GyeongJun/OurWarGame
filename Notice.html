@@ -18,10 +18,11 @@
 		$.getJSON('getNotice.jsp', function(data, status) {
 			if(data.length == 0) return 0;
 			$("div#content").empty();
-			for( idx in data ) {
+			for( idx in data ) 
+				var no 		= data[idx].no;{
 				var text 	= data[idx].text;
 				var time 	= data[idx].time;
-				$("div#content").append("<dd>" + text + "  " + time + "</dd>");
+				$("div#content").append("<d no=" + no + "d>" + text + "  " + time + "</dd>");
 			}
 		}).fail(function() {
 			var con = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>'

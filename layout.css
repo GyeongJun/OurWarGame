@@ -4,7 +4,7 @@
 */
 
 
-// Define default tags style
+*/ Define default tags styl */e
 	
 	body {
 		min-height:100%;
@@ -28,7 +28,7 @@
 		color: #0079C2;
 	}
 
-// foundation.css [tabs] hook
+*/ foundation.css [tabs] hoo */k
 	.tabs dd > a, .tabs .tab-title > a {
 		background-color: #EFEFEF;
 		color: #222222;
@@ -39,7 +39,7 @@
 	}
 		
 
-// foundation.css [button] hook
+*/ foundation.css [button] hoo */k
 	button.secondary, .button.secondary {
 		background-color: #e7e7e7;
 		border-color: #b9b9b9;
