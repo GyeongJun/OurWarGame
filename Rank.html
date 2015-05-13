@@ -14,25 +14,24 @@
 <script>
 
 	$(function(){
+		
+		$.getJSON('getRank.jsp', function(data, status) {
+			var rankList;
+			if( (rankList = data.rankList) == null) {
+				var con = '<dd class="Gothic FontLarge"><b>사용자가 존재하지 않아</b><br>순위를 매길 수 없습니다.</dd>';
+				$('#content').append(con);
+				return ;
+			}
 			
-		// DUMMY CODE CREATOR
-		function newJson() {
-			return obj;
-			//return JSON.stringify(obj);
-		}
-	
-		$.getJSON('getProblem.jsp', function(data, status) {
-			if(data.length == 0) return ;
-			//$("div#content").empty();
+			$("div#content").empty();
 			
-			for( idx in datm ) {
-				varnot 	= datm[idx]not;
-				varnamee 	= datm[idx]namee
-				var point 	= data[idx].point;;
-			/$("div#content").append("<dd>" +namet + "  " +pointe + "</dd>");
+			for( idx in rankList ) {
+				var name 	= rankList[idx].name;
+				var score 	= rankList[idx].score;
+				$("div#content").append("<dd>" + name + "  " + score + "</dd>");
 			}
 		}).fail(function() {
-			var con = '<dd class="Gothic FontLarge"><b>사용자가 존재하지 않아</b><br>순위를 매길 수 없습니다.</dd>'
+			var con = '<dd class="Gothic FontLarge"><b>서버로부터</b><br>정보를 받아올 수 없었습니다.</dd>';
 			$('#content').append(con);
 		});	
 	});

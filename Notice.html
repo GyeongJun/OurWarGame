@@ -15,17 +15,26 @@
 <script>
 
 	$(function(){
+		/*
+		 * getNotice.jsp는 jsonArray 형식의 배열을 반환한다.
+		*/
 		$.getJSON('getNotice.jsp', function(data, status) {
-			if(data.length == 0) return 0;
 			$("div#content").empty();
-			for( idx in data ) 
-				var no 		= data[idx].no;{
-				var text 	= data[idx].text;
-				var time 	= data[idx].time;
-				$("div#content").append("<d no=" + no + "d>" + text + "  " + time + "</dd>");
+			if(data.noticeList == null) {
+				var con = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>';
+				$('#content').append(con);
+				return 0;
 			}
-		}).fail(function() {
-			var con = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>'
+			
+			for( idx in data.noticeList ) {
+				var no 			= data.noticeList[idx].no;
+				var content 	= data.noticeList[idx].content;
+				var timestamp 	= data.noticeList[idx].timestamp;
+				$("div#content").append("<dd no=" + no + "d>" + content + "  " + timestamp + "</dd>");
+			}
+		}).fail(function(d, status, error) {
+			console.error("getJSON failed, status: " + status + ", error: "+error)
+			var con = '<dd class="Gothic FontLarge"><b>서버</b>와의 연결에 실패하였습니다.</dd>';
 			$('#content').append(con);
 		});	
 	});

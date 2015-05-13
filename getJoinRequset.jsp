@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charsetutf-8r" pageEncoding=utf-8r"%>
+<%@ page language="java" contentType="text/html"; charset="utf-8r" pageEncoding="utf-8r"%>
+<%@ page import="org.json.simple.*"%>
 <%! 
 	// read only variables here. 
 	String jdbc = "jdbc:mysql://localhost:3306/test";
@@ -17,23 +18,10 @@
 	
 
 	// Connect to database by jdbc
+	Connection con = null;
 	try {
-		Connection con;
 		Class.forName("com.mysql.jdbc.Driver");
-		
-		// JDBC connect.
-
-
-
-
-
-
-
-
-
-
-
-
+		con = DriverManager.getConnection(jdbcURL,dbID,dbPW);
 	} catch(SQLException e) {
 		log("Connection error: " + e.getMessage());
 		out.println("ERROR");
@@ -49,13 +37,12 @@
 		JSONArray jArray = new JSONArray();
 		while( rs.next() ) {
 			JSONObject jObject = new JSONObject();
-			jObejct.put("no", rs.getString(0));
-			jObejct.put("id", rs.getString(1));
-			jObejct.put("name", rs.getString(2));
-			jArray.put(jObject);
+			jObject.put("no", rs.getString(0));
+			jObject.put("id", rs.getString(1));
+			jObject.put("name", rs.getString(2));
+			jArray.add(jObject);
 		}
-		
-		jResultArray.put("member", jArray);
+		jResultObject.put("member", jArray);
 		
 	} catch(SQLException e) {
 		log("Query error: " + e.getMessage());
