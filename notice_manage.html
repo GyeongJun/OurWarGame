@@ -26,20 +26,23 @@
 
 	$(function(){		
 		$.getJSON('getNotice.jsp', function(data, status) {
-			if(data.length == 0) return 0;
 			$("div#nContent").empty();
-			
-			var btnDelete = '<button type="submit" class="button tiny">삭제</button>';
-			
-			for( idx in	data ) {
-				var text 	= data[idx].text;
-				var time 	= data[idx].time;
-				var ind 	= data[idx].ind;
-				$("div#nContent").append("<dd>" + text + "  " + time + " </dd>");
+			if(data.noticeList == null) {
+				var con = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>';
+				$('#nContent').append(con);
+				return 0;
 			}
-		}).fail(function() {
-			var content = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>';
-			$('#nContent').append(content);
+			
+			for( idx in data.noticeList ) {
+				var no 			= data.noticeList[idx].no;
+				var content 	= data.noticeList[idx].content;
+				var timestamp 	= data.noticeList[idx].timestamp;
+				$("div#nContent").append("<dd no=" + no + "d>" + content + "  " + timestamp + "</dd>");
+			}
+		}).fail(function(d, status, error) {
+			console.error("getJSON failed, status: " + status + ", error: "+error)
+			var con = '<dd class="Gothic FontLarge"><b>서버</b>와의 연결에 실패하였습니다.</dd>';
+			$('#nContent').append(con);
 		});	
 	});
 
