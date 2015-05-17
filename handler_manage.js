@@ -18,11 +18,36 @@ $(function(){
 function init() {
 
 //  Initialize management menu
+	
 	$('#notice').empty().load("notice_manage.html");
-	$('#prob').empty().load("problem_manage.html");
-	$('#user').empty().load("user_manage.html");
-	$('#hall').empty().load("hall_manage.html");
+	$('#prob').empty().load("manager_page/problem_manage.html");
+	$('#user').empty().load("user_manage.html", function() {
 
+		$.getScript("contextHandler.js").fail(function(jqxhr, settings, exception) {
+			console.log(jqxhr, settings, exception);
+		});
+		
+	});
+	$('#hall').empty().load("hall_manage.html");
+	
+	
+	
+	/*
+	if (document.addEventListener) {
+        document.addEventListener('contextmenu', function(e) {
+			alert(0);
+
+			e.preventDefault();
+        }, false);
+    } else {
+        document.attachEvent('oncontextmenu', function() {	// IE8 이하
+            alert("You've tried to open context menu");
+            window.event.returnValue = false;
+        });
+    }
+	*/
+ 
+ 
 }
 
 function hashChange(caller) {

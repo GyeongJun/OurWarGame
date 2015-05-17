@@ -26,9 +26,36 @@
 		<script src="js/vendor/modernizr.js"></script>
 
 		<!-- Load foundation css -->
+		<link rel="stylesheet" href="contextStyle.css" />
 		<link rel="stylesheet" href="css/foundation.css" />
+		
+		<!-- Bootstrap Core CSS -->
+		<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-		<!-- JS extension for Topbar -->
+		<!-- MetisMenu CSS -->
+		<link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+		<!-- Timeline CSS -->
+		<link href="../dist/css/timeline.css" rel="stylesheet">
+
+		<!-- Custom CSS -->
+		<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+		<!-- Morris Charts CSS -->
+		<link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+
+		<!-- JS extension for Topbar -->	
 		<script src="js/foundation/foundation.dropdown.js"></script>
 		<script src="js/foundation/foundation.topbar.js"></script>
 		<script src="js/foundation/foundation.alert.js"></script>
@@ -37,6 +64,8 @@
 		<!-- Define custom css and hook foundation css -->		
 		<link rel="stylesheet" href="common.css" />
 		<link rel="stylesheet" href="manage_layout.css" />
+		
+		
 		
 		<!-- Load sweet alert -->
 		<script src="sweetalert-master/lib/sweet-alert.min.js"></script>
@@ -51,8 +80,8 @@
 	<body>
 	
 	<main class="fixed">
-		
-		<!-- TOPBAR -->		<nav class="top-bar" data-topbar role="navigation">
+		<!-- TOPBAR -->		
+		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">
 				<li class="name">
 					<h1><a>K.KNOCK</a></h1>
@@ -138,6 +167,20 @@
 
 		</div>
 	</main>
+	
+	<nav id="context-menu" class="context-menu">
+		<ul class="context-menu__items">
+			<li class="context-menu__item">
+				<a href="#" class="context-menu__link" data-action="View"><i class="fa fa-eye"></i> View Task</a>
+			</li>
+			<li class="context-menu__item">
+				<a href="#" class="context-menu__link" data-action="Edit"><i class="fa fa-edit"></i> Edit Task</a>
+			</li>
+			<li class="context-menu__item">
+				<a href="#" class="context-menu__link" data-action="Delete"><i class="fa fa-times"></i> Delete Task</a>
+			</li>
+		</ul>
+	</nav>
 
 				
 	</body>
@@ -150,7 +193,7 @@
 		$(document).foundation({
 			tab: {
 				callback : function (tab) {
-					console.log(tab);	
+					//console.log(tab);	
 				}
 			}
 		});
