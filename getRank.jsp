@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="org.json.simple.*"%>
-<%! 	
-	String jdbcURL	= "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8";
-	String dbID		= "kknock_wars";
-	String dbPW		= "enpwlrhtlvsi??"; 
+<@ include file="common.jsp" %>
+<%!
 	String SQL 		= "SELECT name, score FROM member order by score desc limit 50";
 	
 	String FILE		= "getRank.jsp\t";

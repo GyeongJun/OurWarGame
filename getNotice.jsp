@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="org.json.simple.*"%>
-<%! 	
-	String jdbcURL	= "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8";
-	String dbID		= "kknock_wars";
-	String dbPW		= "enpwlrhtlvsi??"; 
+<@ include file="common.jsp" %>
+<%!
 	String SQL 		= "SELECT * FROM notice order by no desc";
 	
 	String FILE		= "getNotice.jsp\t";
@@ -15,7 +13,7 @@
 	// Connect to database by jdbc
 	Connection con = null;
 	try {
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName(dbDriver);
 		con = DriverManager.getConnection(jdbcURL,dbID,dbPW);
 	} catch(SQLException e) {
 		log(FILE + "Connection error: " + e.getMessage());

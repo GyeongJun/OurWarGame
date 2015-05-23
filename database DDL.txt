@@ -1,4 +1,4 @@
-grant all privileges on docs.* to kknock_wars@'%' identified by 'enpwlrhtlvsi??';
+grant all privileges on test.* to kknock_wars@'%' identified by 'enpwlrhtlvsi??';
 flush privileges;
 
 
