@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.sql.*"%>
 <%@ page import="java.security.MessageDigest" %>
 <%@ page import="org.json.simple.*"%>
+<%@ include file="common.jsp" %>
 <%!	
 	// 클래스 변수
-	String jdbcURL	= "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8";
-	String dbID		= "kknock_wars";
-	String dbPW		= "enpwlrhtlvsi??"; 
 	String SQL 		= "SELECT *FROM member WHERE id=? and pw=?"; // 아이디와 비밀번호가 일치하는지 확인
 	
 %>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="org.json.simple.*"%>
-<@ include file="common.jsp" %>
+<%@ include file="common.jsp" %>
 <%!
 	String SQL 		= " Select no, id, name From member Where chk_join='T' ";
 	

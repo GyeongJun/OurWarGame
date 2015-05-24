@@ -1,0 +1,86 @@
+<div class="midium-12 colums">
+	<div class="large-6 columns panel">
+		<div class="table-responsive">
+			<table>
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>내용</th>
+						<th>등록일</th>
+					</tr>
+				</thead>
+				<tbody id="nContent">
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div class="large-6 columns">
+		<div class="panel">
+			<form id="noticeForm" onsubmit="return false" data-abide>
+				<label>Register new notice</label>
+				<div>
+					<input name="content" type="text"/> 
+					<button type="submit" class="button tiny right">등록</button>
+				</div>
+			</form>
+		
+		</div>
+	</div>
+</div>
+
+
+<script>	
+
+	$(function(){
+		$.getJSON('getNotice.jsp', function(data, status) {
+			$("div#nContent").empty();
+			if(data.noticeList == null) {
+				var con = '<dd class="Gothic FontLarge"><b>공지사항</b>이 없습니다.</dd>';
+				$('#nContent').append(con);
+				return 0;
+			}
+			
+			for( idx in data.noticeList ) {
+				var no 			= data.noticeList[idx].no;
+				var content 	= data.noticeList[idx].content;
+				var timestamp 	= data.noticeList[idx].timestamp;
+				var row = "<tr no = " + no + ">" + "<td>" + no + "</td>" + "<td>" + content + "</td>" + "<td>" + timestamp + "</td>";
+				$("#nContent").append(row);
+			}
+		}).fail(function(d, status, error) {
+			console.error("getJSON failed, status: " + status + ", error: "+error)
+			var con = '<dd class="Gothic FontLarge"><b>서버</b>와의 연결에 실패하였습니다.</dd>';
+			$('#nContent').append(con);
+		});	
+		
+		$('#noticeForm').on('valid.fndtn.abide', noticeSubmit);
+		
+	});
+	
+	function noticeSubmit() {
+	
+		var _content = $('#noticeForm input:text[name="content"]').val();
+
+		// 서버에 공지사항 등록 요청
+		var requestData = {notice:_notice};
+		$.getJSON('registNotice.jsp', requestData, function(data, status) {
+			if( data.result == "true" ) {
+				window.location.reload();
+				return true;
+			} else {
+				swal("로그인에 실패하였습니다.", "아이디와 비밀번호를 확인해주세요.", "error");
+				return false;
+			}
+			
+		}).fail(function(data, status) {
+			alert(data.reuslt);
+			swal("죄송합니다.", "서버로의 연결에 실패하였습니다.", "error");
+			return false;
+		});
+		
+		return false;
+	}
+
+</script>

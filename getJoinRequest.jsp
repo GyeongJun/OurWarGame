@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="org.json.simple.*"%>
+<%@ include file="common.jsp" %>
 <%! 
-	String jdbcURL	= "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8";
-	String dbID		= "kknock_wars";
-	String dbPW		= "enpwlrhtlvsi??"; 
 	String SQL 		= " Select no, id, name From member Where chk_join='F' ";
 	
 	String FILE		= "getJoinRequest.jsp\t";

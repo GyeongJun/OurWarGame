@@ -29,23 +29,21 @@
 		<link rel="stylesheet" href="contextStyle.css" />
 		<link rel="stylesheet" href="css/foundation.css" />
 		
+
 		<!-- Bootstrap Core CSS -->
-		<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- MetisMenu CSS -->
-		<link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-		<!-- Timeline CSS -->
-		<link href="../dist/css/timeline.css" rel="stylesheet">
+		<link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
 		<!-- Custom CSS -->
-		<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-		<!-- Morris Charts CSS -->
-		<link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+		<link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
 		<!-- Custom Fonts -->
-		<link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Custom Fonts -->
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -137,7 +135,7 @@
 		<!-- 탭에 대응하는 코드들 -->
 		<div class="tabs-content">
 			<div class="content active" id="default">
-				<div class="small-12 columns">
+				<div>
 					<h2 class="Gothic">관리자 페이지에 오신것을 환영합니다.</h2><p/>
 					동아리가 연상되는 두가지 색을 주로 사용하자.<br/>
 					탑바가 너무 야리한데 좀 키울까... <br/>
@@ -147,22 +145,22 @@
 
 
 			<div class="content" id="notice">
-				a
+				
 			</div>
 			
 			
 			<div class="content" id="prob">
-				b
+				
 			</div>
 			
 			
 			<div class="content" id="user">
-				c
+				
 			</div>
 		
 		
 			<div class="content" id="hall">
-				d
+				
 			</div>
 
 		</div>
